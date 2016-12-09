@@ -13,7 +13,7 @@ class Friends(BaseClient):
 
     # Получение GET параметров запроса
     def get_params(self):
-        return 'user_id=' + str(self.uid) + '&fields=bdate'
+         return parse.urlencode({'user_id': self.uid,'fields' : 'bdate'})
 
         # Отправка запроса к VK API
     def _get_data(self, method, http_method):
